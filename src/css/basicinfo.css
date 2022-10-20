@@ -1,0 +1,85 @@
+.basic-info-container {
+    display: flex;
+    width: 80vw;
+    height: 90vh;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid white;
+}
+.basic-info-container:hover {
+    border: 3px solid blue;
+}
+.logopage {
+    width: 20vw;
+    height: 90vh;
+    background-color: #E1F9F4;
+}
+
+.add-new-property {
+    width: 70vw;
+    background-color:  #F5F5F5;
+
+}
+
+.add-new-property .header {
+    display: flex;
+  height: 5vh;
+  
+}
+.header {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.header-left {
+    float: left;
+    margin-left: 20px;
+}
+
+ .header-right {
+    /* float: right; */
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.bottom-section {
+    display: grid;
+    /* justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center; */
+    border: 1px solid white;
+    width: 60vw;
+    margin-left: 15px;
+}
+
+ .new-property {
+    display: flex;
+    float: left;
+}
+
+.button-section {
+    display: grid;
+    grid-template: 100%/repeat(4,1fr);
+    column-gap: 3px;
+}
+
+.btn1 {
+    background-color: 
+    #6AB4F8;
+    color: white;
+    width: 150px;
+    height: 30px;
+    border-radius: 20%;
+}
+
+.details-section {
+    display: grid;
+    grid-template: 100%/repeat(2,1fr);
+    column-gap: 1px;
+    background-color: white;
+}
+
+.down-buttons {
+    background-color: white;
+}
