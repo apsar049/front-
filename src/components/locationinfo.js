@@ -83,72 +83,66 @@ const LocationInfo = () => {
 
                         <div className="details-section-left">
                             <div className="details-section-left1">
-                                <div><label>Property Type</label></div>
+                                <div><label>Email</label></div>
                                 <div>
-                                    <input list="data" placeholder="Select Property Type" />
+                                    <input type="text" placeholder="Email" />
+                                </div>
+                            </div>
+                            <div className="details-section-left1">
+                                <div><label>Area</label></div>
+                                <div>
+                                    <input list="data" placeholder="Select Area"/>
                                     <datalist id="data">{data.map((op, i) => <option key={i}>{op}</option>)}</datalist>
                                 </div>
                             </div>
                             <div className="details-section-left1">
-                                <div><label>Price</label></div>
+                                <div><label>Address</label></div>
                                 <div>
-                                    <input type="number" />
+                                    <input type="text" placeholder="Address" />
                                 </div>
                             </div>
                             <div className="details-section-left1">
-                                <div><label>Property Age</label></div>
+                                <div><label>Ltittude</label></div>
                                 <div>
-                                    <input list="data1" placeholder="Select Property Age" />
-                                    <datalist id="data1">{data1.map((op, i) => <option key={i}>{op}</option>)}</datalist>
-                                </div>
-                            </div>
-                            <div className="details-section-left1">
-                                <div><label>Property Description</label></div>
-                                <div>
-                                    <input type="text" />
+                                    <input type="text" placeholder="Latittude"/>
                                 </div>
                             </div>
                         </div>
                         <div className="details-section-right">
                             <div className="details-section-right1">
-                                <div><label>Negotable</label></div>
+                                <div><label>City</label></div>
                                 <div>
-                                    <input list="data2" placeholder="Select Negotable" />
+                                    <input list="data1" placeholder="Select City" />
+                                    <datalist id="data1">{data1.map((op, i) => <option key={i}>{op}</option>)}</datalist>
+                                </div>
+                            </div>
+                            <div className="details-section-right1">
+                                <div><label>Pincode</label></div>
+                                <div>
+                                    <input list="data2" placeholder="Select Pincode" />
                                     <datalist id="data2">{data2.map((op, i) => <option key={i}>{op}</option>)}</datalist>
                                 </div>
                             </div>
                             <div className="details-section-right1">
-                                <div><label>Ownership</label></div>
+                                <div><label>Landmark</label></div>
                                 <div>
-                                    <input list="data3" placeholder="Select Ownership" />
-                                    <datalist id="data3">{data3.map((op, i) => <option key={i}>{op}</option>)}</datalist>
+                                    <input type="text" placeholder="Landmark" />
                                 </div>
                             </div>
                             <div className="details-section-right1">
-                                <div><label>Property Approved</label></div>
+                                <div><label>Longittude</label></div>
                                 <div>
-                                    <input list="data4" placeholder="Property Approved" />
-                                    <datalist id="data4">{data4.map((op, i) => <option key={i}>{op}</option>)}</datalist>
-                                </div>
-                            </div>
-                            <div className="details-section-right1">
-                                <div><label>Bank Loan</label></div>
-                                <div>
-                                    <input list="data5" placeholder="Bank Loan" />
-                                    <datalist id="data5">{data5.map((op, i) => <option key={i}>{op}</option>)}</datalist>
+                                    <input type="text" placeholder="Longittude" />
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <span><Link to="./listings"><button className="cancel">cancel</button></Link></span>
-                            <span><Link to="./listings"><button className="save">add property</button></Link></span>
+                            <span><Link to="./listings"><button className="previous">previous</button></Link></span>
+                            <span><Link to="./listings"><button className="addproperty">add property</button></Link></span>
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
     )
 }

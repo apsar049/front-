@@ -1,9 +1,12 @@
 import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../css/basicinfo.css"
 import "../css/generalinfo.css"
 const GeneralInfo = () => {
     //{ info }
+    const [image, setImage] = useState("");
+    const [contact, setContact] = useState("");
     const data = ["Plot", "House", "Flat"]
     const data1 = ["1 Year", "2 Year", "3 Year"]
     const data2 = ["Yes", "No"]
@@ -55,7 +58,7 @@ const GeneralInfo = () => {
                         {/* {info.email} */}
                     </div>
                 </div>
-                <hr/>
+                <hr />
 
                 <div className="bottom-section">
                     <div className="new-property" >ADD NEW PROPERTY</div>
@@ -71,8 +74,8 @@ const GeneralInfo = () => {
                             <span>Property Detail</span>
                         </div>
                         <div className="similar-button">
-                        <button className="btn3"><span><i className="fa-regular fa-circle-3"></i></span>
-                            <span>General Info</span></button>
+                            <button className="btn3"><span><i className="fa-regular fa-circle-3"></i></span>
+                                <span>General Info</span></button>
                         </div>
                         <div className="similar-button">
                             <span><i className="fa-regular fa-circle-4"></i></span>
@@ -83,61 +86,53 @@ const GeneralInfo = () => {
 
                         <div className="details-section-left">
                             <div className="details-section-left1">
-                                <div><label>Property Type</label></div>
+                                <div><label>Name</label></div>
                                 <div>
-                                    <input list="data" placeholder="Select Property Type" />
+                                    <input list="data" placeholder="Owner" />
                                     <datalist id="data">{data.map((op, i) => <option key={i}>{op}</option>)}</datalist>
                                 </div>
                             </div>
                             <div className="details-section-left1">
-                                <div><label>Price</label></div>
+                                <div><label>Posted By</label></div>
                                 <div>
-                                    <input type="number" />
-                                </div>
-                            </div>
-                            <div className="details-section-left1">
-                                <div><label>Property Age</label></div>
-                                <div>
-                                    <input list="data1" placeholder="Select Property Age" />
+                                    <input list="data1" placeholder="Posted By" />
                                     <datalist id="data1">{data1.map((op, i) => <option key={i}>{op}</option>)}</datalist>
                                 </div>
                             </div>
                             <div className="details-section-left1">
-                                <div><label>Property Description</label></div>
+                                <div><label>Featured Package</label></div>
                                 <div>
-                                    <input type="text" />
+                                    <input list="data2" placeholder="Please Select" />
+                                    <datalist id="data2">{data2.map((op, i) => <option key={i}>{op}</option>)}</datalist>
                                 </div>
                             </div>
                         </div>
                         <div className="details-section-right">
                             <div className="details-section-right1">
-                                <div><label>Negotable</label></div>
+                                <div><label>Moobile</label></div>
                                 <div>
-                                    <input list="data2" placeholder="Select Negotable" />
-                                    <datalist id="data2">{data2.map((op, i) => <option key={i}>{op}</option>)}</datalist>
+                                    <input type="number" placeholder="Enter Mobile Number" value={contact}
+                                        onChange={(e) => { setContact(e) }} />
                                 </div>
                             </div>
                             <div className="details-section-right1">
-                                <div><label>Ownership</label></div>
+                                <div><label>Sale Type</label></div>
                                 <div>
-                                    <input list="data3" placeholder="Select Ownership" />
+                                    <input list="data3" placeholder="Please Select" />
                                     <datalist id="data3">{data3.map((op, i) => <option key={i}>{op}</option>)}</datalist>
                                 </div>
                             </div>
                             <div className="details-section-right1">
-                                <div><label>Property Approved</label></div>
+                                <div><label>PPD Package</label></div>
                                 <div>
-                                    <input list="data4" placeholder="Property Approved" />
+                                    <input list="data4" placeholder="Please Select" />
                                     <datalist id="data4">{data4.map((op, i) => <option key={i}>{op}</option>)}</datalist>
                                 </div>
                             </div>
-                            <div className="details-section-right1">
-                                <div><label>Bank Loan</label></div>
-                                <div>
-                                    <input list="data5" placeholder="Bank Loan" />
-                                    <datalist id="data5">{data5.map((op, i) => <option key={i}>{op}</option>)}</datalist>
-                                </div>
-                            </div>
+                        </div>
+                        <div className="camera">
+                            <button className="camera-icon" value={image} onClick={(e) => { setImage(e) }}><span><i className="fa-sharp fa-solid fa-circle-camera"></i></span>
+                                <span>Add Photo</span></button>
                         </div>
                         <div>
                             <span><Link to="./listings"><button className="cancel">cancel</button></Link></span>

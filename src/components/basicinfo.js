@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../css/basicinfo.css"
 const BasicInfo = () => {
     //{ info }
+    const [propertyType,setPropertyType] = useState("")
     const data = ["Plot", "House", "Flat"]
     const data1 = ["1 Year", "2 Year", "3 Year"]
     const data2 = ["Yes", "No"]
@@ -84,7 +85,8 @@ const BasicInfo = () => {
                             <div className="details-section-left1">
                                 <div><label>Property Type</label></div>
                                 <div>
-                                    <input list="data" placeholder="Select Property Type" />
+                                    <input list="data"  value={propertyType} placeholder="Select Property Type"
+                                     onChange={(e)=>{setPropertyType(e.target.value)}}/>
                                     <datalist id="data">{data.map((op, i) => <option key={i}>{op}</option>)}</datalist>
                                 </div>
                             </div>

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../css/propertydetails.css"
 const Properties = ()=> {
+    const [totalArea,setTotalArea] = useState("")
     const data = ["Plot", "House", "Flat"]
     const data1 = ["1 Year", "2 Year", "3 Year"]
     const data2 = ["Yes", "No"]
@@ -92,7 +93,7 @@ return (
                     <div className="details-section-left1">
                         <div><label>Total Area</label></div>
                         <div>
-                            <input type="number" />
+                            <input type="number" value={totalArea} onChange={(e)=>{setTotalArea(e)}} />
                         </div>
                     </div>
                     <div className="details-section-left1">
@@ -176,7 +177,7 @@ return (
 
                 </div>
                 <div>
-                    <span><Link to="./basicinfo"><button className="cancel">previous</button></Link></span>
+                    <span><Link to="./listings"><button className="previous">previous</button></Link></span>
                     <span><Link to="./generalinfo"><button className="save">save & continue</button></Link></span>
                 </div>
             </div>
