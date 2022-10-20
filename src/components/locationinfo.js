@@ -1,10 +1,26 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../css/basicinfo.css"
 import "../css/locationinfo.css"
+
 const LocationInfo = () => {
     //{ info }
-    const data = ["Plot", "House", "Flat"]
+    const navigate = useNavigate()
+    const handleUpload = async (e) => {
+        e.preventDefault();
+        const formdata = new FormData();
+        formdata.append("image",image)
+        formdata.append("PropertyType",Property)
+        formdata.append("Mobile",Mobile)
+        formdata.append("TotalArea",TotalArea)
+        await axios.post("http://localhost:8000/listings",(formdata))
+        .then((res)=>{console.log(res)})
+        .catch(error => {console.log(error)})
+        navigate("/listings")
+        
+    }
+    const data0 = ["Plot", "House", "Flat"]
     const data1 = ["1 Year", "2 Year", "3 Year"]
     const data2 = ["Yes", "No"]
     const data3 = ["Owned"]
@@ -55,7 +71,7 @@ const LocationInfo = () => {
                         {/* {info.email} */}
                     </div>
                 </div>
-                <hr/>
+                <hr />
 
                 <div className="bottom-section">
                     <div className="new-property" >ADD NEW PROPERTY</div>
@@ -75,8 +91,8 @@ const LocationInfo = () => {
                             <span>General Info</span>
                         </div>
                         <div className="similar-button">
-                        <button className="btn4"><span><i className="fa-regular fa-circle-4"></i></span>
-                            <span>Location Info</span></button>
+                            <button className="btn4"><span><i className="fa-regular fa-circle-4"></i></span>
+                                <span>Location Info</span></button>
                         </div>
                     </div>
                     <div className="details-section">
@@ -91,8 +107,8 @@ const LocationInfo = () => {
                             <div className="details-section-left1">
                                 <div><label>Area</label></div>
                                 <div>
-                                    <input list="data" placeholder="Select Area"/>
-                                    <datalist id="data">{data.map((op, i) => <option key={i}>{op}</option>)}</datalist>
+                                    <input list="data0" placeholder="Select Area" />
+                                    <datalist id="data0">{data0.map((op, i) => <option key={i}>{op}</option>)}</datalist>
                                 </div>
                             </div>
                             <div className="details-section-left1">
@@ -104,7 +120,7 @@ const LocationInfo = () => {
                             <div className="details-section-left1">
                                 <div><label>Ltittude</label></div>
                                 <div>
-                                    <input type="text" placeholder="Latittude"/>
+                                    <input type="text" placeholder="Latittude" />
                                 </div>
                             </div>
                         </div>
@@ -138,7 +154,9 @@ const LocationInfo = () => {
                         </div>
                         <div>
                             <span><Link to="./listings"><button className="previous">previous</button></Link></span>
-                            <span><Link to="./listings"><button className="addproperty">add property</button></Link></span>
+                            <span><Link to="./listings"><button className="addproperty"
+                                onClick={(e) => { handleUpload(e) }}>add property</button>
+                            </Link></span>
                         </div>
                     </div>
                 </div>
